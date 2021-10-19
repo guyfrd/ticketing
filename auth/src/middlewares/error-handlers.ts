@@ -4,7 +4,7 @@ import { CustomError } from '../errors/custom-error';
 export const errorHandler = (
   err: Error,
   req: Request,
-  res: Response,
+  res: Response,    
   next: NextFunction
 ) => {
   if (err instanceof CustomError) {

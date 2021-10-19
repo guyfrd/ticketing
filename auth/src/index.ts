@@ -1,4 +1,5 @@
 import express from 'express';
+import mongoose from 'mongoose';
 import { json } from 'body-parser';
 
 import { currentUserRouter } from './routes/current-user';
@@ -21,6 +22,16 @@ app.all('*', async (req, res, next) => {
 })
 app.use(errorHandler);
 
-app.listen(10000, () => {
-    console.log("auth listening on port 10000!!!pp!");
-})
+const start = async () => {
+    try {
+        await mongoose.connect('mongodb://auth-mongo-srv:27017/auth');
+    } catch(err) {
+        console.log(err);
+    }
+    console.log('connected to mongo');
+    app.listen(10000, () => {
+        console.log("auth listening on port 10000!!!pp!");
+    })
+}
+
+start();

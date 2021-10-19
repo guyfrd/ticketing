@@ -18,7 +18,7 @@ async (req: Request, res: Response, next: NextFunction) => {
         }
 
         const { email, passwords } = req.body;
-        throw new DatabaseConnectionError();
+        // throw new DatabaseConnectionError();
         res.send({status: "200"});  
     } catch(err) {
         next(err);
