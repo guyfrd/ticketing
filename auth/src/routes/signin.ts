@@ -45,7 +45,6 @@ async (req: Request, res: Response, next: NextFunction) => {
 
         res.status(201).send(existingUser);
     } catch(err) {
-        console.log(err)
         next(err);
     }
 });
