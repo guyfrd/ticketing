@@ -23,7 +23,13 @@
 <!-- ABOUT THE PROJECT -->
 # About The Project
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
-Buy and sell sports tickets, concert tickets, theater tickets  
+Ticketing.dev is an open marketplace for buying and selling tickets for a wide variety of events.
+The application build with the microservices architecture, by writing the backend with Node.js and Typescript and the frontend with Next.js on top of React.js.
+Every service runs in a Docker container, and manage his own data in MongoDB.
+The application can be deployed as a Kubernetes cluster in a local machine or cloud environment.
+
+Technical stack:
+Microservices, Typescript, Javascript, Node.js, Express, React.js, Docker, Kubernetes, MongoDB. 
 
 ### Built With
 * [Node.js](https://nodejs.org/)
