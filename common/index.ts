@@ -9,4 +9,3 @@ export * from './middlewares/current-user';
 export * from './middlewares/error-handlers';
 export * from './middlewares/require-auth';
 export * from './middlewares/validate-request';
-
