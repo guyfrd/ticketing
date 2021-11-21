@@ -6,10 +6,8 @@ export default ({ url, method, body, onSuccess }) => {
     const doRequest = async () => {
         try {
             setErrors(null);
-            console.log("use-request", body);
             const response = await axios[method](url, body);
             if (onSuccess) {
-                console.log('doRequest: ', response.data);
                 onSuccess(response.data);
             }
 

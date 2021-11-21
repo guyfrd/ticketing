@@ -14,7 +14,6 @@ export default () => {
 
     const onSubmit = async (event) => {
         event.preventDefault();
-        console.log("sign in do request: ", event);
         doRequest();
 
     };

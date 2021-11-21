@@ -1,6 +1,6 @@
 import express, { Request, Response, NextFunction } from 'express';
 import { body, validationResult } from 'express-validator';
-import { BadRequestError } from 'gf-tickets/common'
+import { BadRequestError } from '@gf-tickets/common'
 import { RequestValidationError } from '@gf-tickets/common';
 import { User } from '../models/user';
 import { Password } from '../services/passwords';
