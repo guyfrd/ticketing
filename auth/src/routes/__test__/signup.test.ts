@@ -1,6 +1,5 @@
 import request from 'supertest';
 import { app } from '../../app';
-import { response } from 'express';
 
 jest.setTimeout(30000)
 

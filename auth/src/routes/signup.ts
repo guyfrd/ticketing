@@ -1,11 +1,11 @@
 import express, { Request, Response, NextFunction } from 'express';
 import { body, validationResult } from 'express-validator';
 import jwt from 'jsonwebtoken';
-import { DatabaseConnectionError } from '../errors/database-connection-error';
-import { BadRequestError } from '../errors/bad-request-error'
-import { RequestValidationError } from '../errors/request-validation-error';
+import { DatabaseConnectionError } from '@gf-tickets/common';
+import { BadRequestError } from '@gf-tickets/common';
+import { RequestValidationError } from '@gf-tickets/common';
 import { User } from '../models/user';
-import { validateRequest } from '../middlewares/validate-request';
+import { validateRequest } from '@gf-tickets/common';
 
 const router = express.Router();
 
