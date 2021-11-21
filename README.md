@@ -40,6 +40,14 @@ Microservices, Typescript, Javascript, Node.js, Express, React.js, Docker, Kuber
 * [Docker](https://www.docker.com/)
 * [Kubernetes](https://kubernetes.io/)
 
+# Features
+* list tickets for a sell
+* buy a ticket or lock the price for 15 minute
+* price editing
+* history of orders
+* user authentication 
+* payments
+
 <!-- GETTING STARTED -->
 # Getting Started
 
@@ -50,60 +58,38 @@ This is an example of how to list things you need to use the software and how to
   ```sh
   npm install npm@latest -g
   ``` -->
+* [Docker](https://docs.docker.com/engine/install/ubuntu/)
+* [skaffold](https://skaffold.dev/docs/install/)
+* Kubernetes
 
 ## Installation
-<!-- 1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+
+1. Clone the repo
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   git clone git@github.com:guyfrd/ticketing.git
    ```
-3. Install NPM packages
+2. Install NPM packages
    ```sh
    npm install
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+3. Generate JWT secret in the cluster: 
+   ```sh
+   kubectl create secret generic jwt-secret --from-literal=JWT_KEY=<YOUR_KEY>
    ```
-
-<p align="right">(<a href="#top">back to top</a>)</p>
- -->
 
 
 <!-- USAGE EXAMPLES -->
-# Usage
-<!-- <p align="right">(<a href="#top">back to top</a>)</p> -->
+# Usage (temporary)
+```sh
+skaffold dev
+```
+# Tests
+```sh
+cd <SERVICE NAME>
+npm test
+```
 
-<!-- 
-<!-- ROADMAP -->
-# Roadmap
-<!-- 
-- [] Feature 1
-- [] Feature 2
-- [] Feature 3
-    - [] Nested Feature -->
-<!-- 
-See the [open issues](https://github.com/guyfrd/ticketing/issues) for a full list of proposed features (and known issues).
-
-<p align="right">(<a href="#top">back to top</a>)</p>  -->
-
-
-<!-- CONTRIBUTING -->
-# Contributing
-<!-- 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request -->
-
-<!-- <p align="right">(<a href="#top">back to top</a>)</p> -->
-
+# API
 
 <!-- CONTACT -->
 # Contact
@@ -114,7 +100,16 @@ Don't forget to give the project a star! Thanks again!
 
 <!-- <p align="right">(<a href="#top">back to top</a>)</p> -->
 
+# Roadmap
+<!-- 
+- [] Feature 1
+- [] Feature 2
+- [] Feature 3
+    - [] Nested Feature -->
+<!-- 
+See the [open issues](https://github.com/guyfrd/ticketing/issues) for a full list of proposed features (and known issues).
 
+<p align="right">(<a href="#top">back to top</a>)</p>  -->
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
