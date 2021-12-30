@@ -7,6 +7,8 @@ import {
   NotAuthorizedError,
 } from '@gf-tickets/common';
 import { Ticket } from '../models/ticket';
+import { TicketUpdatedPublisher } from '../events/publishers/ticket-updated-publisher';
+import { natsWrapper } from '../nats-wrapper';
 
 const router = express.Router();
 
@@ -34,9 +36,14 @@ router.put(
             title: req.body.title,
             price: req.body.price
         });
-        ticket.save();
-        // const newTicket = await Ticket.findOneAndUpdate({_id: req.params.id}, req.body)
-        
+        await ticket.save();
+        new TicketUpdatedPublisher(natsWrapper.client).publish({
+          id: ticket.id,
+          title: ticket.title,
+          price: ticket.price,
+          userId: ticket.userId
+        });
+
         res.send(200);
 
     } catch(err) {
