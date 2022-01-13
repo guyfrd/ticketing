@@ -46,7 +46,7 @@ Microservices, Typescript, Javascript, Node.js, Express, React.js, Docker, Kuber
 * price editing
 * history of orders
 * user authentication 
-* payments
+* payments(coming soon)
 
 <!-- GETTING STARTED -->
 # Getting Started
@@ -60,7 +60,7 @@ This is an example of how to list things you need to use the software and how to
   ``` -->
 * [Docker](https://docs.docker.com/engine/install/ubuntu/)
 * [skaffold](https://skaffold.dev/docs/install/)
-* Kubernetes
+* [Kubernetes(minikube)](https://minikube.sigs.k8s.io/docs/start/)
 
 ## Installation
 
@@ -72,27 +72,75 @@ This is an example of how to list things you need to use the software and how to
    ```sh
    npm install
    ```
-3. Generate JWT secret in the cluster: 
+3. set k8s minikube envirement:
+   ```sh
+   minikube start
+   ```
+5. Generate JWT secret in the cluster: 
    ```sh
    kubectl create secret generic jwt-secret --from-literal=JWT_KEY=<YOUR_KEY>
    ```
-
-
+6. enter the repo directory
+7. run skaffold
+   ```sh
+   skaffold run
+   ```
+   for development:
+   ```sh
+   skaffold dev
+  ```
 <!-- USAGE EXAMPLES -->
-# Usage (temporary)
-```sh
-skaffold dev
-```
+
 # Tests
 ```sh
 cd <SERVICE NAME>
 npm test
 ```
 
-# API
+# REST API (WIP)
+
+The REST API to the Ticketing is described below. 
+
+## auth service
+- POST - /user/signin - signin with existing user name </br>
+  body:
+  ```javascript
+  {
+    "email": example@example.com,
+    "password": password
+  }
+  ```
+- POST -/user/signout - signout
+- POST - /user/signup - first time log-in
+  body:
+  ```javascript
+  {
+    "email": example@example.com,
+    "password": password
+  }
+  ```
+- GET - /users/currentuser
+  response: 
+  ```javascript
+  { "id": current-user,
+    "email": current-user email
+  }
+  ```
+
+## Tickets service
+- GET - /tickets - get all tickets
+- POST- /tickets - create new ticket
+- GET -/tickets/:id - get ticket by id  
+- PUT - /tickets/:id - update ticket
+
+## Order service 
+- DELETE - /orders/:orderId 
+- GET - /orders - get orders by userId
+- GET - /orders/:orderId
+- POST - /orders - new order
 
 <!-- CONTACT -->
-# Contact
+<!-- # Contact -->
 
 <!-- Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com -->
 
@@ -100,7 +148,7 @@ npm test
 
 <!-- <p align="right">(<a href="#top">back to top</a>)</p> -->
 
-# Roadmap
+<!-- # Roadmap -->
 <!-- 
 - [] Feature 1
 - [] Feature 2
